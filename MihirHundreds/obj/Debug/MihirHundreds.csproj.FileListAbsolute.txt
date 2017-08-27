@@ -8,3 +8,13 @@ C:\Users\GMRInstructor\Documents\Visual Studio 2017\Projects\MihirHundreds\Mihir
 C:\Users\GMRInstructor\Documents\Visual Studio 2017\Projects\MihirHundreds\MihirHundreds\obj\Debug\MihirHundreds.csproj.CoreCompileInputs.cache
 C:\Users\GMRInstructor\Documents\Visual Studio 2017\Projects\MihirHundreds\MihirHundreds\obj\Debug\MihirHundreds.exe
 C:\Users\GMRInstructor\Documents\Visual Studio 2017\Projects\MihirHundreds\MihirHundreds\obj\Debug\MihirHundreds.pdb
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.csprojResolveAssemblyReference.cache
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.Form1.resources
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.Properties.Resources.resources
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.csproj.GenerateResource.Cache
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.csproj.CoreCompileInputs.cache
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.exe
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\obj\Debug\MihirHundreds.pdb
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\bin\Debug\MihirHundreds.exe.config
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\bin\Debug\MihirHundreds.exe
+C:\Users\GMRInstructor\Documents\GitHub\MihirHundreds\HundredsX\MihirHundreds\bin\Debug\MihirHundreds.pdb

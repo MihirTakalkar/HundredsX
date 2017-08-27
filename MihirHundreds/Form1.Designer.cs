@@ -46,6 +46,7 @@
             this.BacIm.Location = new System.Drawing.Point(0, 0);
             this.BacIm.Name = "BacIm";
             this.BacIm.Size = new System.Drawing.Size(724, 501);
+            this.BacIm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BacIm.TabIndex = 0;
             this.BacIm.TabStop = false;
             // 
@@ -53,11 +54,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MihirHundreds.Properties.Resources.html_color_codes_color_tutorials_hero_00e10b1f;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(724, 501);
             this.Controls.Add(this.BacIm);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.BacIm)).EndInit();
             this.ResumeLayout(false);
 
