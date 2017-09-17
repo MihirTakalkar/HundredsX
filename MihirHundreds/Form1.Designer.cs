@@ -49,6 +49,7 @@
             this.BacIm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.BacIm.TabIndex = 0;
             this.BacIm.TabStop = false;
+            this.BacIm.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BacIm_MouseMove);
             // 
             // Form1
             // 

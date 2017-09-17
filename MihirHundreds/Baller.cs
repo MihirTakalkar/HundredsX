@@ -9,40 +9,84 @@ namespace MihirHundreds
 {
     class Baller
     {
-        int height;
-        int width;
+        int ogHeight;
+        int ogWidth;
         int ballx;
         int bally;
         public int speedx;
         public int speedy;
 
+        public float scale = 1;
+
+        public int X
+        {
+            get
+            {
+                return ballx;
+            }
+            set
+            {
+                ballx = value;
+            }
+        }
+
+        public int Width
+        {
+            get
+            {
+                return (int)(ogWidth * scale);
+            }
+        }
+
+        public int Height
+        {
+            get
+            {
+                return (int)(ogHeight * scale);
+            }
+        }
+
+  
+
+        public Rectangle Hitbox
+        {
+            get
+            {
+                return new Rectangle(ballx, bally, Width, Height);
+            }
+        }
+
         public Baller(int ballx, int bally, int width, int height, int speedx, int speedy)
         {
             this.ballx = ballx;
             this.bally = bally;
-            this.width = width;
-            this.height = height;
+            this.ogWidth = width;
+            this.ogHeight = height;
             this.speedx = speedx;
             this.speedy = speedy;
+
+
         }
 
         public void Update(Size ClientSize)
         {
-            if (bally + height > ClientSize.Height)
+
+
+            if (bally + Height > ClientSize.Height)
             {
-                speedy *= -1;
+                speedy = -Math.Abs(speedy);
             }
-            if(ballx + width > ClientSize.Width)
+            if (ballx + Width > ClientSize.Width)
             {
-                speedx *= -1;
+                speedx = -Math.Abs(speedx);
             }
             if (bally < 0)
             {
-                speedy *= -1;
+                speedy = Math.Abs(speedy);
             }
-            if(ballx < 0)
+            if (ballx < 0)
             {
-                speedx *= -1;
+                speedx = Math.Abs(speedx);
             }
 
             ballx += speedx;
@@ -50,8 +94,8 @@ namespace MihirHundreds
         }
         public void Draw(Graphics gfx)
         {
-            gfx.FillEllipse(Brushes.DarkGray, ballx, bally, width, height);
-            gfx.DrawRectangle(Pens.Red, ballx, bally, width, height);
+            gfx.FillEllipse(Brushes.DarkGray, ballx, bally, Width, Height);
+            gfx.DrawRectangle(Pens.Red, Hitbox);
         }
 
     }

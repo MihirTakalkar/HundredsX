@@ -20,6 +20,7 @@ namespace MihirHundreds
         Random rand = new Random();
         List<Baller> balls;
         Bitmap bitmap;
+        Point mouse = new Point(0, 0);
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -43,6 +44,21 @@ namespace MihirHundreds
             for (int i = 0; i < balls.Count; i++)
             {
                 balls[i].Update(ClientSize);
+
+
+
+                //if the balls' hitbox contains our mouse point, increase scale
+                if(balls[i].Hitbox.Contains(mouse))
+                {
+                    balls[i].scale += 0.05f;
+
+                }
+            }
+           
+
+            
+            for (int i = 0; i < balls.Count; i++)
+            {
                 balls[i].Draw(gfx);
             }
 
@@ -51,11 +67,17 @@ namespace MihirHundreds
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Space)
+            if (e.KeyCode == Keys.Space)
             {
                 int randomNumber = rand.Next(0, 150);
                 balls.Add(new Baller(randomNumber, randomNumber, 50, 50, 6, 6));
             }
+        }
+
+        private void BacIm_MouseMove(object sender, MouseEventArgs e)
+        {
+            mouse = new Point(e.X, e.Y);
+            this.Text = $"X:{mouse.X}, Y:{mouse.Y}";
         }
     }
 }
