@@ -43,6 +43,7 @@
             // BacIm
             // 
             this.BacIm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BacIm.Image = global::MihirHundreds.Properties.Resources.maxresdefault;
             this.BacIm.Location = new System.Drawing.Point(0, 0);
             this.BacIm.Name = "BacIm";
             this.BacIm.Size = new System.Drawing.Size(724, 501);

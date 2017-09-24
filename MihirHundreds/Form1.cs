@@ -25,11 +25,11 @@ namespace MihirHundreds
         private void Form1_Load(object sender, EventArgs e)
         {
             balls = new List<Baller>();
-            balls.Add(new Baller(20, 20, 40, 40, 3, 3));
-            balls.Add(new Baller(30, 60, 40, 40, 5, 5));
-            balls.Add(new Baller(70, 70, 40, 40, 7, 7));
-            balls.Add(new Baller(90, 90, 40, 40, 8, 8));
-            balls.Add(new Baller(10, 10, 40, 40, 10, 10));
+            balls.Add(new Baller(20, 20, 40, 40, 2, 2));
+            balls.Add(new Baller(120, 60, 40, 40, 4, 4));
+            balls.Add(new Baller(220, 70, 40, 40, 6, 6));
+            balls.Add(new Baller(320, 90, 40, 40, 7, 7));
+            balls.Add(new Baller(420, 10, 40, 40, 8, 8));
             bitmap = new Bitmap(BacIm.Width, BacIm.Height);
             gfx = Graphics.FromImage(bitmap);
 
@@ -43,20 +43,38 @@ namespace MihirHundreds
 
             for (int i = 0; i < balls.Count; i++)
             {
+                bool growing = false;
                 balls[i].Update(ClientSize);
-
-
-
-                //if the balls' hitbox contains our mouse point, increase scale
-                if(balls[i].Hitbox.Contains(mouse))
+                if(balls[i].Contains(mouse))
                 {
                     balls[i].scale += 0.05f;
-
+                    growing = true;
                 }
-            }
-           
 
-            
+                for (int f = i + 1; f < balls.Count; f++)
+                {
+                    //calculate intersection
+                    if(balls[i].Intersects(balls[f]))
+                    {
+                        balls[i].speedx *= -1;
+                        balls[i].speedy *= -1;
+                        balls[f].speedx *= -1;
+                        balls[f].speedy *= -1;
+
+                        if(growing == true)
+                        {
+                            MoTi.Stop();
+                            MessageBox.Show("You Lose! Fooool!");
+                        }
+                    }
+                }
+
+                //if the balls' hitbox contains our mouse point, increase scale
+               
+            }
+
+
+
             for (int i = 0; i < balls.Count; i++)
             {
                 balls[i].Draw(gfx);

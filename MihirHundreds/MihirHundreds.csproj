@@ -89,5 +89,8 @@
   <ItemGroup>
     <None Include="Resources\html-color-codes-color-tutorials-hero-00e10b1f.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
