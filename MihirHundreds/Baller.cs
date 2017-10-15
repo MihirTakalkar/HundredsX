@@ -19,6 +19,8 @@ namespace MihirHundreds
 
         public float scale = 1;
 
+        public int score = 0;
+
         public int X
         {
             get
@@ -131,6 +133,8 @@ namespace MihirHundreds
         {
             gfx.FillEllipse(Brushes.DarkGray, ballx, bally, Width, Height);
             //gfx.DrawRectangle(Pens.BlueViolet, Hitbox);
+            Point scoreCoord = new Point(ballx + 10, bally);
+            gfx.DrawString(score.ToString(), new Font("Ariel", 14), new SolidBrush(Color.Black), scoreCoord);
         }
 
         public bool Intersects(Baller other)
@@ -142,10 +146,8 @@ namespace MihirHundreds
             {
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
         public bool Contains(Point point)
@@ -154,12 +156,11 @@ namespace MihirHundreds
             double distance = Math.Sqrt(Math.Pow(point.X - CenterX, 2) + Math.Pow(point.Y - CenterY, 2));
             if (Radius > distance)
             {
+                score++;
                 return true;
             }
-            else
-            {
-                return false;
-            }
+
+            return false;
         }
 
     }

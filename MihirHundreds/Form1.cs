@@ -21,9 +21,12 @@ namespace MihirHundreds
         List<Baller> balls;
         Bitmap bitmap;
         Point mouse = new Point(0, 0);
+        Font font;
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            font = label1.Font;
+
             balls = new List<Baller>();
             balls.Add(new Baller(20, 20, 40, 40, 2, 2));
             balls.Add(new Baller(120, 60, 40, 40, 4, 4));
@@ -41,27 +44,32 @@ namespace MihirHundreds
             //erase
             gfx.DrawImage(BackgroundImage, 0, 0, ClientSize.Width, ClientSize.Height);
 
+            int totalScore = 0;
+
             for (int i = 0; i < balls.Count; i++)
             {
                 bool growing = false;
                 balls[i].Update(ClientSize);
-                if(balls[i].Contains(mouse))
+                if (balls[i].Contains(mouse))
                 {
                     balls[i].scale += 0.05f;
                     growing = true;
+                    //score++
                 }
+
+                totalScore += balls[i].score;
 
                 for (int f = i + 1; f < balls.Count; f++)
                 {
                     //calculate intersection
-                    if(balls[i].Intersects(balls[f]))
+                    if (balls[i].Intersects(balls[f]))
                     {
                         balls[i].speedx *= -1;
                         balls[i].speedy *= -1;
                         balls[f].speedx *= -1;
                         balls[f].speedy *= -1;
 
-                        if(growing == true)
+                        if (growing == true)
                         {
                             MoTi.Stop();
                             MessageBox.Show("You Lose! Fooool!");
@@ -70,15 +78,26 @@ namespace MihirHundreds
                 }
 
                 //if the balls' hitbox contains our mouse point, increase scale
-               
+
             }
 
+            if (totalScore >= 100)
+            {
+                MoTi.Stop();
+                MessageBox.Show("You Win! Idioooot!");
+            }
 
+            //draw the score 
+            string message = "Hello World";
+            SizeF size = gfx.MeasureString(message, font);
+            gfx.DrawString(message, font, Brushes.Blue, ClientSize.Width / 2 - size.Width/2, ClientSize.Height / 2 - size.Height/2);
 
             for (int i = 0; i < balls.Count; i++)
             {
                 balls[i].Draw(gfx);
             }
+
+
 
             BacIm.Image = bitmap;
         }
