@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MihirHundreds
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
-        public Form1()
+        public Game()
         {
             InitializeComponent();
         }
@@ -35,6 +35,7 @@ namespace MihirHundreds
             balls.Add(new Baller(420, 10, 40, 40, 8, 8));
             bitmap = new Bitmap(BacIm.Width, BacIm.Height);
             gfx = Graphics.FromImage(bitmap);
+            BackgroundImage = Properties.Resources._48307wide;
 
 
         }
@@ -45,6 +46,8 @@ namespace MihirHundreds
             gfx.DrawImage(BackgroundImage, 0, 0, ClientSize.Width, ClientSize.Height);
 
             int totalScore = 0;
+
+         
 
             for (int i = 0; i < balls.Count; i++)
             {
@@ -81,16 +84,14 @@ namespace MihirHundreds
 
             }
 
-            if (totalScore >= 100)
-            {
-                MoTi.Stop();
-                MessageBox.Show("You Win! Idioooot!");
-            }
-
+            
             //draw the score 
-            string message = "Hello World";
+            string message = totalScore.ToString();
             SizeF size = gfx.MeasureString(message, font);
-            gfx.DrawString(message, font, Brushes.Blue, ClientSize.Width / 2 - size.Width/2, ClientSize.Height / 2 - size.Height/2);
+            gfx.DrawString(message, font, Brushes.Lime, ClientSize.Width / 2 - size.Width / 2, ClientSize.Height / 2 - size.Height / 2);
+
+            
+
 
             for (int i = 0; i < balls.Count; i++)
             {
@@ -100,6 +101,12 @@ namespace MihirHundreds
 
 
             BacIm.Image = bitmap;
+
+            if (totalScore >= 100)
+            {
+                MoTi.Stop();
+                MessageBox.Show("You Win! Idioooot!");
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -115,6 +122,11 @@ namespace MihirHundreds
         {
             mouse = new Point(e.X, e.Y);
             this.Text = $"X:{mouse.X}, Y:{mouse.Y}";
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

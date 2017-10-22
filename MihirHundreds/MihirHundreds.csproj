@@ -46,16 +46,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Baller.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Game.Designer.cs">
+      <DependentUpon>Game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\End Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\End Screen.Designer.cs">
+      <DependentUpon>End Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartScreen.Designer.cs">
+      <DependentUpon>StartScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Game.resx">
+      <DependentUpon>Game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\End Screen.resx">
+      <DependentUpon>End Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartScreen.resx">
+      <DependentUpon>StartScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +109,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\maxresdefault.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\468739.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48307wide.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\521223436.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beautiful-High-Resolution-Wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playbuttonclear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1503873023-pause-button-png-transparent-image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

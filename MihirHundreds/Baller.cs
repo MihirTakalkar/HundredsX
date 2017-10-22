@@ -131,10 +131,10 @@ namespace MihirHundreds
         }
         public void Draw(Graphics gfx)
         {
-            gfx.FillEllipse(Brushes.DarkGray, ballx, bally, Width, Height);
+            gfx.FillEllipse(Brushes.Orange, ballx, bally, Width, Height);
             //gfx.DrawRectangle(Pens.BlueViolet, Hitbox);
             Point scoreCoord = new Point(ballx + 10, bally);
-            gfx.DrawString(score.ToString(), new Font("Ariel", 14), new SolidBrush(Color.Black), scoreCoord);
+            gfx.DrawString(score.ToString(), new Font("Pericles", 18), new SolidBrush(Color.Red), new PointF(ballx + Width / 2 - gfx.MeasureString(score.ToString(), new Font("Pericles", 18)).Width / 2, bally + Height / 2- gfx.MeasureString(score.ToString(), new Font("Pericles", 18)).Width / 2));
         }
 
         public bool Intersects(Baller other)

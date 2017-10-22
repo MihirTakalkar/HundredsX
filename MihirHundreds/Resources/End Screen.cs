@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MihirHundreds
+namespace MihirHundreds.Resources
 {
-    public partial class Form2 : Form
+    public partial class _3ND : Form
     {
-        public Form2()
+        public _3ND()
         {
             InitializeComponent();
         }

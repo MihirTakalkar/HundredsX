@@ -1,6 +1,6 @@
 ﻿namespace MihirHundreds
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@
             // BacIm
             // 
             this.BacIm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BacIm.Image = global::MihirHundreds.Properties.Resources.maxresdefault;
+            this.BacIm.Image = global::MihirHundreds.Properties.Resources._48307wide;
             this.BacIm.Location = new System.Drawing.Point(0, 0);
             this.BacIm.Name = "BacIm";
             this.BacIm.Size = new System.Drawing.Size(724, 501);
@@ -56,15 +56,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Pericles", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Lime;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 35);
+            this.label1.Size = new System.Drawing.Size(0, 135);
             this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
             this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -73,8 +75,8 @@
             this.ClientSize = new System.Drawing.Size(724, 501);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BacIm);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Game";
+            this.Text = "GAM3";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.BacIm)).EndInit();
